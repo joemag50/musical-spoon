@@ -1,0 +1,6 @@
+.container
+  h1 Editar Categoria
+
+  = simple_form_for @category, url: category_url(@category.id), method: :patch  do |f|
+    = f.input :name
+    = f.button :submit, class: 'btn btn-primary'

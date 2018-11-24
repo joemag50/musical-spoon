@@ -1,0 +1,6 @@
+.container
+  h1 Nueva Categoria
+
+  = simple_form_for @category, url: categories_url, method: :post  do |f|
+    = f.input :name
+    = f.button :submit, class: 'btn btn-primary'

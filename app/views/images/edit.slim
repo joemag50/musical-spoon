@@ -1,0 +1,12 @@
+.container
+  .row
+    .col-6
+      h1 Editar Imagen
+
+      = simple_form_for @image, url: image_url(@image.id), method: :patch  do |f|
+        = f.input :url
+        = f.select :category_id, Category.all.pluck(:name, :id)
+        = f.button :submit, class: 'btn btn-primary'
+    .col-6
+      .card
+        = image_tag('', id: 'image', class: 'card-img-top')

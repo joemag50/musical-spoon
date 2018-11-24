@@ -1,0 +1,12 @@
+.container
+  .row
+    .col-6
+      h1 Nueva Imagen
+
+      = simple_form_for @image, url: images_url, method: :post  do |f|
+        = f.input :url
+        = f.select :category_id, Category.all.pluck(:name, :id)
+        = f.button :submit, class: 'btn btn-primary'
+    .col-6
+      .card
+        = image_tag('', id: 'image', class: 'card-img-top')

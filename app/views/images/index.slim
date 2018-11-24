@@ -1,0 +1,24 @@
+.container
+  h1 Imágenes
+
+  = button_to 'Nueva', new_image_path, method: :get, class: 'btn btn-secondary'
+
+  table.table.table-striped.mt-5
+    thead.thead-dark
+      tr
+        th scope="col" ID
+        th scope="col" Imagen
+        th scope="col" URL
+        th scope="col" Categoria
+        th scope="col" Opciones
+    tbody
+      - @images.each do |img|
+        tr
+          th scope="row" = img.id
+          td = image_tag img.url, size: '40x60'
+          td = img.url
+          td = img.category.name
+          td.btn-group
+            = button_to 'Editar', edit_image_path(img.id), method: :get, class: 'btn btn-secondary'
+            = button_to 'Borrar', image_path(img.id), method: :delete, class: 'btn btn-danger'
+    

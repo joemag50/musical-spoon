@@ -1,0 +1,20 @@
+.container
+  h1 Categorias
+
+  = button_to 'Nueva', new_category_path, method: :get, class: 'btn btn-secondary'
+
+  table.table.table-striped.mt-5
+    thead.thead-dark
+      tr
+        th scope="col" ID
+        th scope="col" Nombre
+        th scope="col" Opciones
+    tbody
+      - @categories.each do |c|
+        tr
+          th scope="row" = c.id
+          td = c.name
+          td.btn-group
+            = button_to 'Editar', edit_category_path(c.id), method: :get, class: 'btn btn-secondary'
+            = button_to 'Borrar', category_path(c.id), method: :delete, class: 'btn btn-danger'
+    
