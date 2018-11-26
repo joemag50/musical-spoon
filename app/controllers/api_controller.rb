@@ -3,7 +3,7 @@ class ApiController < ApplicationController
     res = {}
     categories = Category.all.order(:id).pluck(:name, :id)
     categories.each do |c, id|
-      res[c] = Image.where(category_id: id)
+      res[c] = Image.where(category_id: id).order("RANDOM()")
     end
     render json: res
   end
