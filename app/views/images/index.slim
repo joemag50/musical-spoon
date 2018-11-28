@@ -16,7 +16,7 @@
       - @images.each do |img|
         tr
           th scope="row" = img.id
-          td = image_tag img.url, size: '40x60'
+          td = image_tag img.url_thumbnail, size: '40x60'
           td = img.url
           td = img.url_thumbnail
           td = img.category.name
