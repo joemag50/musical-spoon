@@ -20,6 +20,6 @@ class ApiController < ApplicationController
   private
 
   def image_params
-    params.require(:image).permit(:url, :category_id)
+    params.require(:image).permit(:url, :url_thumbnail, :category_id)
   end
 end
