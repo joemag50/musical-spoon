@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
   before_action :find_model, only: [:edit, :update, :destroy]
   
   def index
-    @images = Image.order(:id).all
+    @images = Image.order(:id).all.paginate(:page => params[:page], per_page: 300)
   end
 
   def new

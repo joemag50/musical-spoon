@@ -23,4 +23,5 @@
           td.btn-group
             = button_to 'Editar', edit_image_path(img.id), method: :get, class: 'btn btn-secondary'
             = button_to 'Borrar', image_path(img.id), method: :delete, class: 'btn btn-danger'
-    
+
+= will_paginate @images, class: 'flickr_pagination'
